@@ -32,7 +32,7 @@ redis.defineCommand('slidingWindow', {
 });
 
 describe('TokenBucketLimiter (integration)', () => {
-  const limiter = new TokenBucketLimiter(redis, { capacity: 100, refillRatePerSec: 1000, keyPrefix: 'test:tb' });
+  const limiter = new TokenBucketLimiter(redis, { capacity: 100, refillRatePerSec: 1, keyPrefix: 'test:tb' });
 
   beforeEach(async () => {
     await redis.del('test:tb:client-a');
